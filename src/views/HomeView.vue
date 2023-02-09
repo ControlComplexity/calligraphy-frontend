@@ -1,15 +1,41 @@
 <template>
-  <el-carousel :interval="4000" type="card" height="200px">
-   <el-carousel-item v-for="item in 6" :key="item">
-     <h3 text="2xl" justify="center">{{ item }}</h3>
-   </el-carousel-item>
- </el-carousel>
+ <el-carousel class="lun_imgs" type="card" ref="carousel" height="200px">
+           <el-carousel-item class="lun_img" v-for="item in list" v-bind:key="item.URL" >
+             <img :src="item.URL"/>
+           </el-carousel-item>
+         </el-carousel>
+ <Hyperlink></Hyperlink>        
 </template>
-<script>
 
+<script>
+import axios from 'axios'
+import Hyperlink from '@/components/Hyperlink.vue'
 export default {
+  components: {
+    Hyperlink
+  },
   name: 'HomeView',
+  data(){
+    return {
+      list: this.list
+    }
+  },
+  created(){
+      let that = this
+         axios.get("http://101.43.39.188:10000/api/carousel/carousels")
+        .then(function (response) {
+          if (response.status == 200){
+            console.log(response.data.data.results,'shuchu')
+            that.list = response.data.data.results
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+  },
 }
+
+
 </script>
 
 <style scoped>
