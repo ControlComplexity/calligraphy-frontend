@@ -1,18 +1,24 @@
 <template>
- <el-carousel class="lun_imgs" type="card" ref="carousel" height="200px">
+  <TopHyperlink></TopHyperlink>
+ <el-carousel class="lun_imgs" type="card" ref="carousel" height="300px" indicator-position="none">
            <el-carousel-item class="lun_img" v-for="item in list" v-bind:key="item.URL" >
              <img :src="item.URL"/>
            </el-carousel-item>
          </el-carousel>
- <Hyperlink></Hyperlink>        
+ <Hyperlink></Hyperlink>     
+ <Footer></Footer>   
 </template>
 
 <script>
 import axios from 'axios'
 import Hyperlink from '@/components/Hyperlink.vue'
+import TopHyperlink from '@/components/TopHyperlink.vue'
+import Footer from '@/components/Footer.vue'
 export default {
   components: {
-    Hyperlink
+    Hyperlink,
+    Footer,
+    TopHyperlink
   },
   name: 'HomeView',
   data(){
