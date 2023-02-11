@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-     版权所有@书法教育网   地址：深圳市南山区    反馈意见：1111111 
+     版权所有@书法教育网&nbsp&nbsp&nbsp&nbsp地址：深圳市南山区&nbsp&nbsp&nbsp&nbsp反馈意见：1111111&nbsp&nbsp&nbsp&nbsp联系人：王老板
     </div>
   </template>
   <style scoped>

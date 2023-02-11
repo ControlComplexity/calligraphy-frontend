@@ -1,5 +1,5 @@
-# calligraphy
-
+# 书法教育网
+领先的书法教育平台
 ## Project setup
 ```
 npm install

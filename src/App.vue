@@ -1,7 +1,12 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">主页</router-link> &nbsp|&nbsp
+    <router-link to="/communicate">书法字帖</router-link>&nbsp|&nbsp
+    <router-link to="/children">少儿书法教育</router-link>&nbsp|&nbsp
+    <router-link to="/university">大学书法教育</router-link>&nbsp|&nbsp
+    <router-link to="/theory">书法教育理论</router-link>&nbsp|&nbsp
+    <router-link to="/communicate">学习与交流</router-link>&nbsp|&nbsp
+    <!-- <router-link to="/about">关于</router-link> -->
   </nav>
   <router-view/>
 </template>
@@ -16,15 +21,16 @@
 }
 
 nav {
-  background-color: #bdc8c3;
-  padding: 20px;
+  height: 15px;
+  background-color: #CC0000;
+  padding: 10px;
   a {
-    font-weight: bold;
-    color: #637990;
+  
+    color: 	#e8e5e5;
 
-    &.router-link-exact-active {
-      color: #286248;
-    }
+    // &.router-link-exact-active {
+    //   color: #286248;
+    // }
   }
 }
 </style>

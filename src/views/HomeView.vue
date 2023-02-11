@@ -1,8 +1,9 @@
 <template>
+  
+ <el-carousel class="lun_imgs" type="card" ref="carousel" height="1000px" width="1200px" indicator-position="none">
   <TopHyperlink></TopHyperlink>
- <el-carousel class="lun_imgs" type="card" ref="carousel" height="300px" indicator-position="none">
-           <el-carousel-item class="lun_img" v-for="item in list" v-bind:key="item.URL" >
-             <img :src="item.URL"/>
+           <el-carousel-item class="lun_img"  v-for="item in list" v-bind:key="item.URL">
+             <img :src="item.URL"  @click.native="goSolution(item, index)"/>
            </el-carousel-item>
          </el-carousel>
  <Hyperlink></Hyperlink>     
@@ -24,6 +25,12 @@ export default {
   data(){
     return {
       list: this.list
+    }
+  },
+  methods: {
+     goSolution(item, index){
+      console.log("链接： ",item.Link)
+      window.open(item.Link, "_blank");
     }
   },
   created(){
