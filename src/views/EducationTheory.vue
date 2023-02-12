@@ -1,6 +1,6 @@
 <template>
- <div id="app">           
-  <li v-for="item in list">
+ <div id="theory">           
+  <li v-for="item in list" @click="detail(item)">
     {{item.Title}}
 </li></div>
 </template>
@@ -12,6 +12,16 @@ import axios from 'axios'
   data(){
     return {
       list: this.list
+    }
+  },
+  methods: {
+    detail(id) {
+      this.$router.push({
+        name: 'essayDetail',
+        params: {
+          id: id.ID
+        }
+      })
     }
   },
   created(){

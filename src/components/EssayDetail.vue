@@ -1,6 +1,5 @@
 <template>
   <div id="essay">           
- {{essay.Title}} 
  {{essay.Content}}
 </div>
  </template>
@@ -17,8 +16,10 @@ export default {
     }
   },
   created(){
+    console.log('mounted', this.$route.params.id)
+    console.log('created', this.$route)
       let that = this
-         axios.get("http://101.43.39.188:10000/api/essay/1")
+         axios.get("http://101.43.39.188:10000/api/essay/" + this.$route.params.id)
         .then(function (response) {
           if (response.status == 200){
             that.essay = response.data.data.results
