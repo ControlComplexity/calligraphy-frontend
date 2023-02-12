@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory  } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import Detail from '@/components/EssayDetail.vue'
+import TheoryDetail from '@/components/TheoryDetail.vue'
 const routes = [
   
   {
@@ -40,9 +40,9 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // }
   {
-    name: 'essayDetail', // 命名路由
-    path: '/detail/:id', // 动态二级路由
-    component: Detail
+    name: 'theoryDetail', // 命名路由
+    path: '/theory_detail/:id', // 动态二级路由
+    component: TheoryDetail
   }
 ]
 

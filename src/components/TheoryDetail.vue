@@ -19,7 +19,7 @@ export default {
     console.log('mounted', this.$route.params.id)
     console.log('created', this.$route)
       let that = this
-         axios.get("http://101.43.39.188:10000/api/essay/" + this.$route.params.id)
+         axios.get("http://101.43.39.188:10000/api/theory/" + this.$route.params.id)
         .then(function (response) {
           if (response.status == 200){
             that.essay = response.data.data.results

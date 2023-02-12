@@ -1,7 +1,7 @@
 <template>
  <div id="theory">           
-  <li v-for="item in list" @click="detail(item)">
-    {{item.Title}}
+  <li v-for="item in list" @click="theoryDetail(item)">
+<img v-bind:src="item.Image"  width="60" height="40"> {{item.Title}}
 </li></div>
 </template>
 
@@ -15,9 +15,9 @@ import axios from 'axios'
     }
   },
   methods: {
-    detail(id) {
+    theoryDetail(id) {
       this.$router.push({
-        name: 'essayDetail',
+        name: 'theoryDetail',
         params: {
           id: id.ID
         }
