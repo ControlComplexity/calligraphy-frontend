@@ -19,15 +19,12 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   height: 15px;
   background-color: #CC0000;
   padding: 10px;
   a {
-  
     color: 	#e8e5e5;
-
     &.router-link-exact-active {
       color: #286248;
     }
