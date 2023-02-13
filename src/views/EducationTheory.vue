@@ -1,13 +1,18 @@
 <template>
  <div id="theory">           
   <li v-for="item in list" @click="theoryDetail(item)">
-<img v-bind:src="item.Image"  width="60" height="40"> {{item.Title}}
+<img v-bind:src="item.Image"  width="100" height="70"> {{item.Title}}
 </li></div>
+<Pagination></Pagination>
 </template>
 
 <script>
 import axios from 'axios'
+import Pagination from '@/components/Pagination.vue'
    export default {
+    components:{
+      Pagination
+    },
   name: 'EducationTheory',
   data(){
     return {

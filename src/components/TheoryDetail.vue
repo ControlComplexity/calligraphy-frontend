@@ -1,9 +1,27 @@
 <template>
-  <div id="essay">           
+<div>
+  <div class="contentContainer"> 
+<div id="content">           
+ <h2>{{essay.Title}}</h2>
+</div>
+</div>
+<div class="contentContainer"> 
+<div id="content">           
  {{essay.Content}}
 </div>
+</div>
+</div>
  </template>
- 
+ <style>
+ .contentContainer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+ }
+ #content {
+  width: 85%;
+ }
+</style>
 
 <script>
 // 文章详情
