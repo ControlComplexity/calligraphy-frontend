@@ -3,6 +3,7 @@
     <router-link to="/">主页</router-link> &nbsp|&nbsp
     <router-link to="/copybook">书法字帖</router-link>&nbsp|&nbsp
     <router-link to="/children">少儿书法教育</router-link>&nbsp|&nbsp
+    <!-- <router-link to="/swiper">Swiper</router-link>&nbsp|&nbsp -->
     <router-link to="/university">大学书法教育</router-link>&nbsp|&nbsp
     <router-link to="/theory">书法教育理论</router-link>&nbsp|&nbsp
     <router-link to="/tech">科技与书法</router-link>&nbsp|&nbsp

@@ -1,124 +1,38 @@
 <template>
   <div class="tab-container" id="tabContainer">
-    <div class="tab-item" v-for="(item, index) in pbList" :key="index">
-      <img :src="item.url" />
+    <div class="tab-item" v-for="(item, index) in list" :key="index">
+      <img :src="item.Image" />
     </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
 export default {
   data() {
     return {
-      //瀑布流数据
-      pbList: [
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-        {
-          url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fphoto%2Fm%2Fpublic%2Fp2650049201.jpg&refer=http%3A%2F%2Fimg3.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664935370&t=d4bf3e4d352c277a1bdebfcc8fda959f",
-          title: "标题",
-          content:
-            "描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "68.50",
-          sales_volume: "281",
-        },
-        {
-          url: "https://img1.baidu.com/it/u=2911909188,130959360&fm=253&fmt=auto&app=138&f=JPEG?w=440&h=641",
-          title: "标题",
-          content: "描述部分描述部分描述部分描述部分描述部分描述部分描述部分",
-          money: "35.00",
-          sales_volume: "1221",
-        },
-      ],
+      list: [],
     };
+  },
+  created(){
+      let that = this
+         axios.get("http://101.43.39.188:10000/api/tech/tech")
+        .then(function (response) {
+          if (response.status == 200){
+            console.log(response.data.data.results)
+            let res =[];
+            // that.list = response.data.data.results
+            for(var item of response.data.data.results) {
+              res.push(item)
+            }
+            that.list = res
+            that.total = response.data.data.page.total
+            console.log("that.total: ", that.total)
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
   },
   mounted() {
     this.waterFall("#tabContainer", ".tab-item"); //实现瀑布流
