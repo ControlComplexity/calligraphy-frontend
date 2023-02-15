@@ -2,7 +2,7 @@
   <div class="root">
     <div class="theory">           
       <div style="display:flex;align-items: center;height: 110px; margin: 10px;overflow: hidden;" v-for="item in list">
-        <div class="image" :style="{backgroundImage:`url(${item.Image})`}">
+        <div class="image" :style="{backgroundImage:`url(${item.Image})`}"  @click="theoryDetail(item)">
           <div class="time">
             <span style="font-size: 17px;font-weight: bold;">13</span>
             <span style="font-size: 14px;">2023.2</span>
@@ -23,7 +23,7 @@
 </template>
 <style>
   .root{
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,9 +32,10 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    margin: 10px 0;
   }
   .theory{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -43,8 +44,14 @@
     width: 40%;
     height: 100%;
     /* background-repeat: no-repeat; */
+    background-position: center;
     background-size: 100%;
     position: relative;
+    transition: background-size ease-in .5s;
+  }
+  .theory .image:hover{
+    cursor:pointer;
+    background-size: 120%;
   }
   .image .time{
     background-color: #adf;
@@ -82,7 +89,7 @@
   .abstract > span{
     display: inline-block;
     width: 100%;
-    height: 64px;
+    height: 70  px;
     line-height: 17px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -91,7 +98,7 @@
     -webkit-box-orient: vertical;
     font-size: 12.5px;
     text-align: left;
-    color: rgb(33, 33, 33);
+    color: #767676;
   }
 </style>
 <script>

@@ -74,7 +74,7 @@
     }
   }
 </script>
-<style >
+<style scoped>
   ._block{
     width:100vw;
     display: flex;

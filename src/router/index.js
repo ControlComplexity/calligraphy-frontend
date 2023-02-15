@@ -1,6 +1,7 @@
-import { createRouter, createWebHashHistory  } from 'vue-router'
+import { createRouter, createWebHistory  } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TheoryDetail from '@/components/TheoryDetail.vue'
+import Admin from '@/components/Admin/index.vue'
 const routes = [
   
   {
@@ -56,11 +57,16 @@ const routes = [
     name: 'theoryDetail', // 命名路由
     path: '/theory_detail/:id', // 动态二级路由
     component: TheoryDetail
+  },
+  {
+    name: 'admin', // 命名路由
+    path: '/admin', // 动态二级路由
+    component: Admin
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
