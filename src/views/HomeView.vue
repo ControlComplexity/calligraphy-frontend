@@ -1,6 +1,6 @@
 <template>
-    <TopHyperlink></TopHyperlink>
-  <!-- <Swiper></Swiper> -->
+ <TopHyperlink></TopHyperlink>
+ <HomeSwiper></HomeSwiper>
  <Hyperlink></Hyperlink>     
  <Footer></Footer>   
 </template>
@@ -10,6 +10,7 @@ import axios from 'axios'
 import Hyperlink from '@/components/Hyperlink.vue'
 import TopHyperlink from '@/components/TopHyperlink.vue'
 import Footer from '@/components/Footer.vue'
+import HomeSwiper from '@/components/HomeSwiper/index.vue'
 
 
 export default {
@@ -17,9 +18,9 @@ export default {
     Hyperlink,
     Footer,
     TopHyperlink,
+    HomeSwiper,
   },
   name: 'HomeView',
-
 }
 
 

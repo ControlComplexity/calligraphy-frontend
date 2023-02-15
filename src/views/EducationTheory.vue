@@ -72,7 +72,7 @@
     margin-bottom: 10px;
     font-size: 13.5px;
     font-weight: bold;
-    color: #000;
+    color: rgb(33, 33, 33);
     font-family: "SourceSansPro-Regular", "微软雅黑";
   }
   .desc_block .title:hover{
@@ -83,7 +83,7 @@
     display: inline-block;
     width: 100%;
     height: 64px;
-    line-height: 13px;
+    line-height: 17px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -91,6 +91,7 @@
     -webkit-box-orient: vertical;
     font-size: 12.5px;
     text-align: left;
+    color: rgb(33, 33, 33);
   }
 </style>
 <script>
